@@ -1,0 +1,363 @@
+# Extra emblems
+
+ExtraEmblem 1
+Name = Game Complete
+Objective = Complete 1P Mode
+ConditionSet = 3
+Sprite = U
+Color = SKINCOLOR_BLUE
+
+ExtraEmblem 2
+Name = All Emeralds
+Objective = Complete 1P Mode with all Emeralds
+ConditionSet = 12
+Sprite = H
+Color = SKINCOLOR_GREY
+
+ExtraEmblem 3
+Name = Challenge Mastery
+Objective = Conquer the Challenge Levels!
+ConditionSet = 104
+Sprite = F
+Color = SKINCOLOR_RUST
+
+# Unlockables
+
+Unlockable 1
+Name = Record Attack
+Objective = Complete Greenflower Zone
+Height = 0
+ConditionSet = 1
+Type = RecordAttack
+
+Unlockable 2
+Name = Play as Fang
+Objective = Complete Arid Canyon Zone
+Height = 0
+ConditionSet = 2
+Type = None
+NoChecklist = true
+
+Unlockable 3
+Name = Play as Metal Sonic
+Objective = Complete the game
+Height = 0
+ConditionSet = 3
+Type = None
+NoChecklist = true
+
+Unlockable 4
+Name = Haunted Heights Zone
+Objective = Complete the game
+ConditionSet = 3
+Type = Warp
+Var = 40
+
+Unlockable 5
+Name = Aerial Garden Zone
+Objective = Complete Haunted Heights Zone
+ConditionSet = 5
+Type = Warp
+Var = 41
+
+Unlockable 6
+Name = Azure Temple Zone
+Objective = Complete Aerial Garden Zone
+ConditionSet = 6
+Type = Warp
+Var = 42
+
+#---#
+
+Unlockable 11
+Name = NiGHTS Mode
+Objective = Complete Special Stage 1
+Height = 0
+ConditionSet = 11
+Type = NightsMode
+
+Unlockable 12
+Name = Dream Hill Zone
+Objective = Complete the game with all emeralds
+Height = 0
+ConditionSet = 12
+Type = None
+
+Unlockable 13
+Name = Alpine Paradise Zone 1
+Objective = Get grade C in all Special Stages
+Height = 0
+ConditionSet = 13
+Type = None
+
+Unlockable 14
+Name = Alpine Paradise Zone 2
+Objective = Get grade B in all Special Stages
+Height = 0
+ConditionSet = 14
+Type = None
+
+Unlockable 15
+Name = Christmas Chime Zone
+Objective = Get grade A in any Special Stage
+Height = 0
+ConditionSet = 15
+Type = None
+
+Unlockable 16
+Name = Black Hole Zone
+Objective = Get grade A in all Special Stages
+Height = 0
+ConditionSet = 16
+Type = None
+NoChecklist = true
+
+
+#---#
+
+Unlockable 21
+Name = Frozen Hillside Zone
+Objective = Get 5 emblems
+ConditionSet = 21
+Type = Warp
+Var = 30
+
+Unlockable 22
+Name = Pipe Towers Zone
+Objective = Get 20 emblems
+ConditionSet = 22
+Type = Warp
+Var = 31
+
+Unlockable 23
+Name = Play as Amy
+Objective = Complete Frozen Hillside Zone
+Height = 0
+ConditionSet = 23
+Type = None
+NoChecklist = true
+
+Unlockable 24
+Name = Emblem Hints
+Objective = Get 40 emblems
+Height = 0
+ConditionSet = 24
+Type = EmblemHints
+
+Unlockable 25
+Name = Forest Fortress Zone
+Objective = Get 60 emblems
+ConditionSet = 25
+Type = Warp
+Var = 32
+
+Unlockable 26
+Name = Emblem Radar
+Objective = Get 80 emblems
+Height = 0
+ConditionSet = 26
+Type = ItemFinder
+
+Unlockable 27
+Name = Techno Legacy Zone
+Objective = Get 100 emblems
+ConditionSet = 27
+Type = Warp
+Var = 33
+
+Unlockable 28
+Name = Pandora's Box
+Objective = Get 200 emblems
+Height = 0
+ConditionSet = 28
+Type = Pandora
+NoChecklist = true
+
+Unlockable 29
+Name = Level Select
+Objective = Get 200 emblems
+Height = 20
+ConditionSet = 28
+Type = LevelSelect
+Var = 1
+NoChecklist = true
+
+#---#
+
+Unlockable 31
+Name = Sound Test
+Objective = Complete Deep Sea Zone
+Height = 50
+ConditionSet = 31
+Type = SoundTest
+
+Unlockable 32
+Name = Play Credits
+Objective = Complete the game
+Height = 90
+ConditionSet = 3
+Type = Credits
+NoCecho = true
+
+#---#
+
+Unlockable 10
+Name = Secret Levels
+Objective = Unlock a secret level
+Height = 30
+ConditionSet = 21
+Type = LevelSelect
+Var = 2
+NoCecho = true
+
+#Unlockable 20
+#Name = Challenge Levels
+#Height = 68
+#Type = Header
+
+#Unlockable 30
+#Name = Other Fun Stuff
+#Height = 118
+#Type = Header
+
+# Condition sets
+
+# Complete GFZ3
+ConditionSet 1
+Condition1 = MapBeaten 3
+
+# Complete ACZ3
+ConditionSet 2
+Condition1 = MapBeaten 15
+
+# Complete the game
+ConditionSet 3
+Condition1 = GameClear 1
+
+# Beat HHZ
+ConditionSet 5
+Condition1 = MapBeaten 40
+
+# Beat AGZ
+ConditionSet 6
+Condition1 = MapBeaten 41
+
+#---#
+
+# Beat Special Stage 1
+ConditionSet 11
+Condition1 = MapBeaten 50
+
+# Complete the game with all emeralds
+ConditionSet 12
+Condition1 = AllEmeralds 1
+
+# C rank all NiGHTS special stages
+ConditionSet 13
+Condition1 = NightsGrade 50 0 GRADE_C
+Condition1 = NightsGrade 51 0 GRADE_C
+Condition1 = NightsGrade 52 0 GRADE_C
+Condition1 = NightsGrade 53 0 GRADE_C
+Condition1 = NightsGrade 54 0 GRADE_C
+Condition1 = NightsGrade 55 0 GRADE_C
+Condition1 = NightsGrade 56 0 GRADE_C
+
+# B rank all NiGHTS special stages
+ConditionSet 14
+Condition1 = NightsGrade 50 0 GRADE_B
+Condition1 = NightsGrade 51 0 GRADE_B
+Condition1 = NightsGrade 52 0 GRADE_B
+Condition1 = NightsGrade 53 0 GRADE_B
+Condition1 = NightsGrade 54 0 GRADE_B
+Condition1 = NightsGrade 55 0 GRADE_B
+Condition1 = NightsGrade 56 0 GRADE_B
+
+# A rank any NiGHTS special stage
+ConditionSet 15
+Condition1 = NightsGrade 50 0 GRADE_A
+Condition2 = NightsGrade 51 0 GRADE_A
+Condition3 = NightsGrade 52 0 GRADE_A
+Condition4 = NightsGrade 53 0 GRADE_A
+Condition5 = NightsGrade 54 0 GRADE_A
+Condition6 = NightsGrade 55 0 GRADE_A
+Condition7 = NightsGrade 56 0 GRADE_A
+
+# A rank all NiGHTS special stages
+ConditionSet 16
+Condition1 = NightsGrade 50 0 GRADE_A
+Condition1 = NightsGrade 51 0 GRADE_A
+Condition1 = NightsGrade 52 0 GRADE_A
+Condition1 = NightsGrade 53 0 GRADE_A
+Condition1 = NightsGrade 54 0 GRADE_A
+Condition1 = NightsGrade 55 0 GRADE_A
+Condition1 = NightsGrade 56 0 GRADE_A
+
+#---#
+
+ConditionSet 20
+Condition1 = TotalEmblems 5
+Condition2 = GameClear 1
+
+# Find 5 emblems
+ConditionSet 21
+Condition1 = TotalEmblems 5
+
+# Find 20 emblems
+ConditionSet 22
+Condition1 = TotalEmblems 20
+
+# Beat Frozen Hillside
+ConditionSet 23
+Condition1 = MapBeaten 30
+
+# Find 40 emblems
+ConditionSet 24
+Condition1 = TotalEmblems 40
+
+# Find 60 emblems
+ConditionSet 25
+Condition1 = TotalEmblems 60
+
+# Find 80 emblems
+ConditionSet 26
+Condition1 = TotalEmblems 80
+
+# Find 80 emblems
+ConditionSet 27
+Condition1 = TotalEmblems 100
+
+# Find 200 (all) emblems
+ConditionSet 28
+Condition1 = TotalEmblems 200
+
+#---#
+
+# Complete DSZ3
+ConditionSet 31
+Condition1 = MapBeaten 9
+
+# Perfect Bonus
+ConditionSet 103
+Condition1 = MapPerfect 1
+Condition2 = MapPerfect 2
+Condition3 = MapPerfect 4
+Condition4 = MapPerfect 5
+Condition5 = MapPerfect 7
+Condition6 = MapPerfect 8
+Condition7 = MapPerfect 10
+Condition8 = MapPerfect 11
+Condition9 = MapPerfect 13
+Condition9 = MapPerfect 14
+Condition10 = MapPerfect 16
+Condition10 = MapPerfect 17
+Condition11 = MapPerfect 22
+Condition12 = MapPerfect 23
+Condition13 = MapPerfect 24
+
+# Beat Azure Temple
+ConditionSet 104
+Condition1 = MapBeaten 42
+
+# Beat Black Hole
+ConditionSet 105
+Condition1 = MapBeaten 57

@@ -1,0 +1,11 @@
+Texture	ERZPLT10 	Range 	ERZPLT13 	Tics 2
+Texture	ERZ_D0W0 	Range 	ERZ_D0W1 	Tics 2
+Texture	ERLASR00 	Range	ERLASR15 	Tics 1
+Texture	ERZAIR00 	Range 	ERZAIR15 	Tics 1 	// Air wall
+Texture	ERZAI200 	Range 	ERZAI215 	Tics 1 	// Air wall to outside
+Flat	DISCO1  	Range	DISCO4  	Tics 16 // was off-beat by 1.1 tics
+
+Flat 	ERFANFL1 	Range 	ERFANFL3 	Tics 1	// Floor fan
+Flat	ERZAIR00 	Range 	ERZAIR15 	Tics 1 	// Air wall
+Flat	ERZAI200 	Range 	ERZAI215 	Tics 1 	// Air wall to outside
+Texture	DISCOD1 	Range	DISCOD4 	Tics 16 // was off-beat by 1.1 tics

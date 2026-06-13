@@ -1,0 +1,22 @@
+=====================================================================
+PK3 Compile Script for Linux/MacOS
+Created by Ashi
+
+Current Directory: /home/xdf22/Documents/slopported
+
+Compiling
+7-Zip 26.01 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-04-27
+ 64-bit locale=en_US.UTF-8 Threads:8 OPEN_MAX:4096, ASM
+
+Scanning the drive:
+342 folders, 12773 files, 396415128 bytes (379 MiB)
+
+Creating archive: 22backported2-v0.pk3
+
+Add new data to archive: 342 folders, 12773 files, 396415128 bytes (379 MiB)
+
+
+Files read from disk: 12773
+Archive size: 165091429 bytes (158 MiB)
+Everything is Ok
+=====================================================================

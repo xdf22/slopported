@@ -1,0 +1,14 @@
+PROMPT 200
+NumPages 2
+PAGE 1
+Lines = 3
+TimeToNext = TICRATE*3
+PageText = 
+    There's a \85letter\80 attached to the door.
+        #
+PAGE 2
+MetaPage = 1
+TimeToNext = (TICRATE*13)/2
+PageText = 
+\d2.\d2.\d2.\d2you can't read this handwriting.
+        #
