@@ -1,4 +1,10 @@
 # Extra emblems
+MainCfg
+GameData = Backported2Data.dat
+Clear Unlockables
+Clear Emblems
+Clear ExtraEmblems
+Clear ConditionSets
 
 ExtraEmblem 1
 Name = Game Complete

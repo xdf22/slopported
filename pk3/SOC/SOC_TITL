@@ -1,5 +1,4 @@
 Maincfg
-GameData = Backported2Data.dat
 NumDemos = 4
 TitleScrollSpeed = 20
 TitlePicsMode = Alacroix
