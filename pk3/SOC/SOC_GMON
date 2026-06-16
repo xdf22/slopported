@@ -1,0 +1,426 @@
+FREESLOT
+SPR_XLTV
+SPR_TVWW
+SPR_TVRI
+SPR_TVPI
+SPR_TVAT
+SPR_TVFO
+SPR_TVAR
+SPR_TVEL
+SPR_TVSS
+SPR_TVIV
+SPR_TV1P
+SPR_TVEG
+SPR_TVMX
+SPR_TVGV
+SPR_TVRC
+SPR_TV1K
+SPR_TVTK
+S_GPRUP
+S_GOLDBOX_FLICKER
+S_RING_GOLDBOX
+S_PITY_GOLDBOX
+S_ATTRACT_GOLDBOX
+S_FORCE_GOLDBOX
+S_NUKE_GOLDBOX
+S_WIND_GOLDBOX
+S_ELEMEN_GOLDBOX
+S_SHOES_GOLDBOX
+S_INV_GOLDBOX
+S_EGG_GOLDBOX
+S_MIXUP_GOLDBOX
+S_GRAV_GOLDBOX
+S_RECYCLE_GOLDBOX
+S_SCORESMALL_GOLDBOX
+S_SCORELARGE_GOLDBOX
+S_GOLDBOX_OFF1
+S_GOLDBOX_OFF2
+S_GOLDBOX_OFF3
+S_GOLDBOX_OFF4
+S_GOLDBOX_OFF5
+MT_GOLDRINGBOX
+MT_GOLDPITYTV
+MT_GOLDATTRACTTV
+MT_GOLDFORCETV
+MT_GOLDNUKETV
+MT_GOLDWINDTV
+MT_GOLDELEMENTV
+MT_GOLDSHOESTV
+MT_GOLDINVTV
+MT_GOLDPRUPTV
+MT_GOLDEGGTV
+MT_GOLDMIXUPTV
+MT_GOLDGRAVTV
+MT_GOLDRECYCLETV
+MT_GOLDSCORETVSMALL
+MT_GOLDSCORETVLARGE
+SFX_MONTON
+
+State S_GOLDBOX_FLICKER
+SpriteName = XLTV
+SpriteFrame = A
+Action = A_GoldMonitorSparkle
+Duration = 2
+Next = S_SPAWNSTATE
+
+State S_GOLDBOX_OFF1
+SpriteName = XLTV
+SpriteFrame = B
+Duration = 89
+Action = A_GoldMonitorPop
+Next = S_GOLDBOX_OFF2
+
+State S_GOLDBOX_OFF2
+SpriteName = XLTV
+SpriteFrame = C
+Duration = 4
+Action = A_PlayAttackSound
+Next = S_GOLDBOX_OFF3
+
+State S_GOLDBOX_OFF3
+SpriteName = XLTV
+SpriteFrame = D|FF_ANIMATE
+Var1 = 1
+Var2 = 4
+Duration = 4
+Next = S_GOLDBOX_OFF4
+
+State S_GOLDBOX_OFF4
+SpriteName = XLTV
+SpriteFrame = F|FF_ANIMATE
+Var1 = 1
+Var2 = 2
+Duration = 2
+Next = S_GOLDBOX_OFF5
+
+State S_GOLDBOX_OFF5
+SpriteName = XLTV
+SpriteFrame = G
+Action = A_GoldMonitorRestore
+Duration = 0
+Next = S_SPAWNSTATE
+
+State S_RING_GOLDBOX
+SpriteName = TVRI
+SpriteFrame = B
+Duration = 1
+Next = S_GOLDBOX_FLICKER
+
+Object MT_GOLDRINGBOX
+#$Sprite TVRI0
+#$Name Gold Super Ring Monitor
+MapThingNum = 430
+SpawnState = S_RING_GOLDBOX
+DeathState = S_GOLDBOX_OFF1
+DeathSound = sfx_pop
+AttackSound = sfx_monton
+SpawnHealth = 1
+Radius = 16*FRACUNIT
+Height = 36*FRACUNIT
+Damage = MT_RINGICO
+Flags = MF_SOLID|MF_SHOOTABLE|MF_MONITOR
+
+State S_PITY_GOLDBOX
+SpriteName = TVPI
+SpriteFrame = B
+Duration = 1
+Next = S_GOLDBOX_FLICKER
+
+Object MT_GOLDPITYTV
+#$Sprite TVPIA0
+#$Name Gold Pity Shield Monitor
+MapThingNum = 431
+SpawnState = S_PITY_GOLDBOX
+DeathState = S_GOLDBOX_OFF1
+DeathSound = sfx_pop
+AttackSound = sfx_monton
+SpawnHealth = 1
+Radius = 16*FRACUNIT
+Height = 36*FRACUNIT
+Damage = MT_PITYSHIELDICO
+Flags = MF_SOLID|MF_SHOOTABLE|MF_MONITOR
+
+Object MT_GOLDATTRACTTV
+#$Sprite TVATB0
+#$Name Gold Attraction Shield Monitor
+MapThingNum = 432
+SpawnState = S_ATTRACT_GOLDBOX
+DeathState = S_GOLDBOX_OFF1
+DeathSound = sfx_pop
+AttackSound = sfx_monton
+SpawnHealth = 1
+Radius = 16*FRACUNIT
+Height = 36*FRACUNIT
+Damage = MT_YSHIELDICO
+Flags = MF_SOLID|MF_SHOOTABLE|MF_MONITOR
+
+State S_ATTRACT_GOLDBOX
+SpriteName = TVAT
+SpriteFrame = B
+Duration = 1
+Next = S_GOLDBOX_FLICKER
+
+Object MT_GOLDFORCETV
+#$Sprite TVF0B0
+#$Name Gold Force Shield Monitor
+MapThingNum = 433
+SpawnState = S_FORCE_GOLDBOX
+DeathState = S_GOLDBOX_OFF1
+DeathSound = sfx_pop
+AttackSound = sfx_monton
+SpawnHealth = 1
+Radius = 16*FRACUNIT
+Height = 36*FRACUNIT
+Damage = MT_BSHIELDICO 
+Flags = MF_SOLID|MF_SHOOTABLE|MF_MONITOR
+
+State S_FORCE_GOLDBOX
+SpriteName = TVFO
+SpriteFrame = B
+Duration = 1
+Next = S_GOLDBOX_FLICKER
+
+Object MT_GOLDNUKETV
+#$Sprite TVARB0
+#$Name Gold Armageddon Shield Monitor
+MapThingNum = 434
+SpawnState = S_NUKE_GOLDBOX
+DeathState = S_GOLDBOX_OFF1
+DeathSound = sfx_pop
+AttackSound = sfx_monton
+SpawnHealth = 1
+Radius = 16*FRACUNIT
+Height = 36*FRACUNIT
+Damage = MT_KSHIELDICO 
+Flags = MF_SOLID|MF_SHOOTABLE|MF_MONITOR
+
+State S_NUKE_GOLDBOX
+SpriteName = TVAR
+SpriteFrame = B
+Duration = 1
+Next = S_GOLDBOX_FLICKER
+
+Object MT_GOLDWINDTV
+#$Sprite TVWWA0
+#$Name Gold Whirlwind Shield Monitor
+MapThingNum = 435
+SpawnState = S_WIND_GOLDBOX
+DeathState = S_GOLDBOX_OFF1
+DeathSound = sfx_pop
+AttackSound = sfx_monton
+SpawnHealth = 1
+Radius = 16*FRACUNIT
+Height = 36*FRACUNIT
+Damage = MT_WSHIELDICO 
+Flags = MF_SOLID|MF_SHOOTABLE|MF_MONITOR
+
+State S_WIND_GOLDBOX
+SpriteName = TVWW
+SpriteFrame = B
+Duration = 1
+Next = S_GOLDBOX_FLICKER
+
+Object MT_GOLDELEMENTV
+#$Sprite TVELB0
+#$Name Gold Elemental Shield Monitor
+MapThingNum = 436
+SpawnState = S_ELEMEN_GOLDBOX
+DeathState = S_GOLDBOX_OFF1
+DeathSound = sfx_pop
+AttackSound = sfx_monton
+SpawnHealth = 1
+Radius = 16*FRACUNIT
+Height = 36*FRACUNIT 
+Damage = MT_GSHIELDICO 
+Flags = MF_SOLID|MF_SHOOTABLE|MF_MONITOR
+
+State S_ELEMEN_GOLDBOX
+SpriteName = TVEL
+SpriteFrame = B
+Duration = 1
+Next = S_GOLDBOX_FLICKER
+
+Object MT_GOLDSHOESTV
+#$Sprite TVSSB0
+#$Name Gold Super Sneakers Shield Monitor
+MapThingNum = 437
+SpawnState = S_SHOES_GOLDBOX
+DeathState = S_GOLDBOX_OFF1
+DeathSound = sfx_pop
+AttackSound = sfx_monton
+SpawnHealth = 1
+Radius = 16*FRACUNIT
+Height = 36*FRACUNIT
+Damage = MT_SHOESICO 
+Flags = MF_SOLID|MF_SHOOTABLE|MF_MONITOR
+
+State S_SHOES_GOLDBOX
+SpriteName = TVSS
+SpriteFrame = B
+Duration = 1
+Next = S_GOLDBOX_FLICKER
+
+Object MT_GOLDINVTV
+#$Sprite TVIVB0
+#$Name Gold Invincibility Monitor
+MapThingNum = 438
+SpawnState = S_INV_GOLDBOX
+DeathState = S_GOLDBOX_OFF1
+DeathSound = sfx_pop
+AttackSound = sfx_monton
+SpawnHealth = 1
+Radius = 16*FRACUNIT
+Height = 36*FRACUNIT
+Damage = MT_INVCICO 
+Flags = MF_SOLID|MF_SHOOTABLE|MF_MONITOR
+
+State S_INV_GOLDBOX
+SpriteName = TVIV
+SpriteFrame = B
+Duration = 1
+Next = S_GOLDBOX_FLICKER
+
+Object MT_GOLDPRUPTV
+#$Sprite TV1PB0
+#$Name Gold Extra Life Monitor
+MapThingNum = 439
+SpawnState = S_GPRUP
+SeeState = S_PLAY_BOX1
+DeathState = S_GOLDBOX_OFF1
+DeathSound = sfx_pop
+AttackSound = sfx_monton
+SpawnHealth = 1
+Radius = 16*FRACUNIT
+Height = 36*FRACUNIT
+Damage = MT_1UPICO
+Flags = MF_SOLID|MF_SHOOTABLE|MF_MONITOR
+
+State S_GPRUP
+SpriteName = TV1P
+SpriteFrame = B
+Action = A_1upThinker
+Duration = 1
+Next = S_GOLDBOX_FLICKER
+
+Object MT_GOLDEGGTV
+#$Sprite TVEGB0
+#$Name Gold Eggman Monitor
+MapThingNum = 440
+SpawnState = S_EGG_GOLDBOX
+DeathState = S_GOLDBOX_OFF1
+DeathSound = sfx_pop
+AttackSound = sfx_monton
+SpawnHealth = 1
+Radius = 16*FRACUNIT
+Height = 36*FRACUNIT
+Damage = MT_EGGMANICO
+Flags = MF_SOLID|MF_SHOOTABLE|MF_MONITOR
+
+State S_EGG_GOLDBOX
+SpriteName = TVEG
+SpriteFrame = B
+Duration = 2
+Next = S_GOLDBOX_FLICKER
+
+Object MT_GOLDMIXUPTV
+#$Sprite TVMXB0
+#$Name Gold Teleport Monitor
+MapThingNum = 441
+SpawnState = S_MIXUP_GOLDBOX
+DeathState = S_GOLDBOX_OFF1
+DeathSound = sfx_pop
+AttackSound = sfx_monton
+SpawnHealth = 1
+Radius = 16*FRACUNIT
+Height = 36*FRACUNIT
+Damage = MT_MIXUPICO
+Flags = MF_SOLID|MF_SHOOTABLE|MF_MONITOR
+
+State S_MIXUP_GOLDBOX
+SpriteName = TVMX
+SpriteFrame = B
+Duration = 1
+Next = S_GOLDBOX_FLICKER
+
+Object MT_GOLDGRAVTV
+#$Sprite TVGVB0
+#$Name Gold Gravity Boots Monitor
+MapThingNum = 443
+SpawnState = S_GRAV_GOLDBOX
+DeathState = S_GOLDBOX_OFF1
+DeathSound = sfx_pop
+AttackSound = sfx_monton
+SpawnHealth = 1
+Radius = 16*FRACUNIT
+Height = 36*FRACUNIT
+Damage = MT_GRAVITYICO
+Flags = MF_SOLID|MF_SHOOTABLE|MF_MONITOR
+
+State S_GRAV_GOLDBOX
+SpriteName = TVGV
+SpriteFrame = B
+Duration = 1
+Next = S_GOLDBOX_FLICKER
+
+Object MT_GOLDRECYCLETV
+#$Sprite TVRCB0
+#$Name Gold Recycler Monitor
+MapThingNum = 446
+SpawnState = S_RECYCLE_GOLDBOX
+DeathState = S_GOLDBOX_OFF1
+DeathSound = sfx_pop
+AttackSound = sfx_monton
+SpawnHealth = 1
+Radius = 16*FRACUNIT
+Height = 36*FRACUNIT
+Damage = MT_RECYCLEICO
+Flags = MF_SOLID|MF_SHOOTABLE|MF_MONITOR
+
+State S_RECYCLE_GOLDBOX
+SpriteName = TVRC
+SpriteFrame = B
+Duration = 1
+Next = S_GOLDBOX_FLICKER
+
+Object MT_GOLDSCORETVSMALL
+#$Sprite TV1KB0
+#$Name Gold Score Monitor(1,000) Points
+MapThingNum = 448
+SpawnState = S_SCORESMALL_GOLDBOX
+DeathState = S_GOLDBOX_OFF1
+DeathSound = sfx_pop
+AttackSound = sfx_monton
+SpawnHealth = 1
+Radius = 16*FRACUNIT
+Height = 36*FRACUNIT
+Damage = MT_SCOREICOSMALL
+Flags = MF_SOLID|MF_SHOOTABLE|MF_MONITOR
+
+State S_SCORESMALL_GOLDBOX
+SpriteName = TV1K
+SpriteFrame = B
+Duration = 1
+Next = S_GOLDBOX_FLICKER
+
+Object MT_GOLDSCORETVLARGE
+#$Sprite TVTKB0
+#$Name Gold Score Monitor(10,000) Points
+MapThingNum = 449
+SpawnState = S_SCORELARGE_GOLDBOX
+DeathState = S_GOLDBOX_OFF1
+DeathSound = sfx_pop
+AttackSound = sfx_monton
+SpawnHealth = 1
+Radius = 16*FRACUNIT
+Height = 36*FRACUNIT
+Damage = MT_SCOREICOLARGE
+Flags = MF_SOLID|MF_SHOOTABLE|MF_MONITOR
+
+State S_SCORELARGE_GOLDBOX
+SpriteName = TVTK
+SpriteFrame = B
+Duration = 1
+Next = S_GOLDBOX_FLICKER
+
+Sound sfx_monton
+Flags = SF_X2AWAYSOUND

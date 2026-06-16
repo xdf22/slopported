@@ -1,0 +1,104 @@
+// Extra animated effect for BIGBOXes
+freeslot(
+	"MT_BOXSPARKLE",
+	"S_BOXSPARKLE1",
+	"S_BOXSPARKLE2",
+	"S_BOXSPARKLE3"
+)
+
+mobjinfo[MT_BOXSPARKLE] = {
+	spawnstate = S_BOXSPARKLE1,
+	speed = 3*FRACUNIT,
+	flags = MF_NOGRAVITY|MF_SCENERY|MF_NOBLOCKMAP|MF_NOCLIPHEIGHT
+}
+states[S_BOXSPARKLE1] =	{SPR_NSPK, TR_TRANS40, 20, nextstate = S_BOXSPARKLE2}
+states[S_BOXSPARKLE2] =	{SPR_NSPK, TR_TRANS60, 10, nextstate = S_BOXSPARKLE3}
+states[S_BOXSPARKLE3] =	{SPR_NSPK, TR_TRANS80,  5, nextstate = S_NULL}
+
+//Common actions shared by all golden monitors
+function A_GoldMonitorPop(actor)
+//
+// Description: Used by repeating monitors when they turn off. They don't really pop, but, you know...
+//
+// var1 = unused
+// var2 = unused
+//
+
+local item = 0
+local newmobj
+local livesico
+
+// Don't spawn the "pop" explosion, because the monitor isn't broken.
+	if (actor.info.deathsound)
+		S_StartSound(actor, actor.info.deathsound)
+		
+	// Remove our flags for a bit.
+    // Players can now stand on top of us.
+	 actor.flags  = $ & ~(MF_MONITOR|MF_SHOOTABLE)
+	 actor.flags2 = $ | MF2_STANDONME
+	if devparm == true and not (actor.info.damage)
+			print("\x82Warning: " .. "\x80Powerup item not defined in 'damage' field for A_GoldMonitorPop")
+			return
+		else
+			item = actor.info.damage
+			// Note: the icon spawns 14 fracunits higher
+			newmobj = P_SpawnMobj(actor.x, actor.y, actor.z, item)
+			newmobj.eflags = $1 + actor.eflags // transfer eflags from parent
+			newmobj.z = $1 + 14*FRACUNIT
+			newmobj.target = actor.target
+		
+		if (item == MT_1UPICO)
+			if (actor.tracer) // Remove the old lives icon.
+			P_RemoveMobj(actor.tracer)
+		end	
+			
+			if not (newmobj.target)
+			or not (newmobj.target.player)
+			or not (newmobj.target.skin)
+				return // No lives icon for this player, use the default.
+			else
+				// Spawn the lives icon.
+				livesico = P_SpawnMobj(0, 0, 0, MT_OVERLAY)
+				livesico.target = newmobj
+				newmobj.tracer = livesico
+				livesico.color = newmobj.target.player.mo.color
+				livesico.skin = newmobj.target.player.mo.skin
+				P_SetMobjStateNF(livesico, newmobj.info.seestate)
+				// We're using the overlay, so use the overlay 1up sprite (no text)
+				newmobj.sprite = SPR_PRUP
+				end
+			end
+		end
+	end
+end	
+				
+function A_GoldMonitorRestore(actor)
+//
+// Description: A repeating monitor is coming back to life. Reset monitor flags, etc.
+//
+// var1 = unused
+// var2 = unused
+//
+	actor.flags = $ | MF_MONITOR|MF_SHOOTABLE
+	actor.flags2 = $ & ~MF2_STANDONME	
+	actor.health = 1 //Just in case
+end
+
+function A_GoldMonitorSparkle(actor)
+//
+// Description: Spawns the little sparkly effect around big monitors. Looks pretty, doesn't it?
+//
+// var1 = unused
+// var2 = unuseds
+//
+	local ngangle = FixedAngle(((leveltime * 21) % 360) << FRACBITS)
+	local xofs = sin(ngangle) * (actor.radius>>FRACBITS)
+	local yofs = cos(ngangle) * (actor.radius>>FRACBITS)	
+	for i = FRACUNIT*2,FRACUNIT*3,32767
+		local sparkmo = P_SetObjectMomZ(P_SpawnMobj(actor.x+xofs, actor.y+yofs, actor.z, MT_BOXSPARKLE), i) // Doing this so we can access sparkmo later.
+		if (actor.eflags & MFE_VERTICALFLIP)	
+			sparkmo.eflags = $1 + actor.eflags
+			sparkmo.z = $1 + 35*FRACUNIT
+		end	
+	end	
+end 
